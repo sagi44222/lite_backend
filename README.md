@@ -1,1 +1,5 @@
-"# soilBackend2" 
+Lite Backend
+Works with Prod.
+
+npm install
+npm start
