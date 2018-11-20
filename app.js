@@ -43,10 +43,15 @@ require('./routes/pages/extraction.js')(app);
 require('./routes/pages/recommandation.js')(app);
 require('./routes/pages/sfApi.js')(app);
 require('./routes/pages/convertion.js')(app);
+require('./routes/pages/email.js')(app);
+
 app.use('/', index);
 
 
 app.use(express.static(path.join(__dirname, 'upload')));
+
+//email Conf
+//app.use('/email', email);
 
 
 //Mongoose Configurations:
