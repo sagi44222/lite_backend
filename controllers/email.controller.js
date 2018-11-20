@@ -24,7 +24,7 @@ exports.pdfFile = (req, res) => {
 
         auth: {
             user: 'sagi.gliksman@smart-fertilizer.com',
-            pass: 'Acdc4422!!'
+            pass: 'mypassword'
         },
         tls: {
            // rejectUnauthorized: false
