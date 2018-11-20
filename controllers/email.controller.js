@@ -18,22 +18,26 @@ exports.pdfFile = (req, res) => {
   `;
 
     let transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 465,
+        host: 'smtp.office365.com',
+        port: 587,
         secure: false,
-        port: 25,
+
         auth: {
-            user: 'sagi4422@gmail.com',
+            user: 'sagi.gliksman@smart-fertilizer.com',
             pass: 'Acdc4422!!'
         },
         tls: {
-            rejectUnauthorized: false
-        }
-    },{        from: 'Sasa <sagi4422@gmail.com>'
-    });
+           // rejectUnauthorized: false
+            ciphers: 'SSLv3'
+        },
+            requireTLS: true
+    }
+
+    );
 
     let HelperOptions = {
-        to: 'Andris Reinman <andris.reinman@gmail.com>',
+        from: 'Info <sagi.gliksman@smart-fertilizer.com>',
+        to: 'sagi <sagi4422@gmail.com>',
         subject: 'Majeni Contact Request',
         text: 'Hello',
         html: outputData
@@ -42,11 +46,12 @@ exports.pdfFile = (req, res) => {
     transporter.sendMail(HelperOptions, (error, info) => {
         if (error) {
             return console.log(error);
+
         }
         console.log("The message was sent!");
         console.log(info);
     });
-    console.log("sagi")
+
 
 
 
